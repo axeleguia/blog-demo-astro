@@ -4,9 +4,11 @@
 
 <p align="center"><a href="https://astro.build/" target="_blank">Astro</a> is an all-in-one web framework for building fast, content-focused websites.</p>
 
-## Description
+## About the Project
 
-Blog Demo with Astro
+Astro Blog Demo
+
+<img src="images/demo-1.jpg" alt="Astro Blog Dark" />
 
 # Astro: Install CLI
 ```
