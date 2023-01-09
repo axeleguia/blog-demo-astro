@@ -1,0 +1,20 @@
+---
+import BlogPost from "../components/BlogPost.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const allPosts = await Astro.glob("../pages/posts/*.md");
+const pageTitle = "Blog";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="divide-y divide-solid dark:divide-gray-700 text-white">
+    {
+      allPosts.map((post) => (
+        <BlogPost
+          url={post.url}
+          title={post.frontmatter.title}
+          pubDate={post.frontmatter.pubDate}
+        />
+      ))
+    }
+  </div>
+</BaseLayout>

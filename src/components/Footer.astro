@@ -1,0 +1,32 @@
+---
+import Social from "./Social.astro";
+
+const networks = [
+  {
+    platform: "LinkedIn",
+    url: "https://www.linkedin.com/in/axel-leguia-chero/",
+    icon: "linkedin",
+  },
+  {
+    platform: "GitHub",
+    url: "https://github.com/axeleguia",
+    icon: "github",
+  },
+];
+---
+<style>
+  #footer {
+    width: inherit;
+  }
+</style>
+<footer id="footer" class="fixed bottom-0 pb-4 flex justify-center p-1 space-x-4">
+  {
+    networks.map((network) => (
+      <Social
+        platform={network.platform}
+        url={network.url}
+        icon={network.icon}
+      />
+    ))
+  }
+</footer>

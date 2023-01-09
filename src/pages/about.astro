@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+
+const pageTitle = "About Me";
+
+const identity = {
+    firstName: "Axel",
+    country: "Peru",
+    occupation: "Software Developer",
+    hobbies: ["read", "gamming", "music"],
+};
+
+const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Angular",
+    "Astro",
+    "Writing Code",
+];
+
+const happy = true;
+const finished = true;
+const goal = 3;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <h2 class="pb-1">This is a proof of concept using Astro</h2>
+    <p class="pb-1">
+        I am working through Astro's introductory tutorial. This is the second
+        page on my website, and it's the first one I built myself!
+    </p>
+    <p class="pb-1">Here are a few facts about me:</p>
+    <ul class="mb-1 list-disc list-inside">
+        <li class="mb-1">My name is {identity.firstName}.</li>
+        <li class="mb-1">
+            I live in {identity.country} and I work as a {identity.occupation}.
+        </li>
+        {
+            identity.hobbies.length >= 2 && (
+                <li class="mb-1">
+                    Two of my hobbies are: {identity.hobbies[0]} and{" "}
+                    {identity.hobbies[1]}
+                </li>
+            )
+        }
+    </ul>
+    {happy && <p class="pb-1">I am happy to be learning Astro!</p>}
+    {finished && <p class="pb-1">I finished the tutorial!</p>}
+    {
+        goal === 3 ? (
+            <p class="pb-1">My goal is to finish in 3 days.</p>
+        ) : (
+            <p class="pb-1">My goal is not 3 days.</p>
+        )
+    }
+    <p class="mb-3">Some Tech used here:</p>
+    <div class="grid grid-cols-3 auto-rows-fr gap-4 mx-auto w-1/2">
+        {skills.map((skill) => <div class="text-white bg-blue-400 hover:bg-blue-500 dark:bg-orange-400 hover:dark:bg-orange-500 px-4 py-8 flex items-center justify-center text-xs ">{skill}</div>)}
+    </div>
+
+</BaseLayout>

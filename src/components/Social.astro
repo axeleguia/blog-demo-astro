@@ -1,0 +1,9 @@
+---
+import { Icon } from "astro-icon";
+const { platform, url, icon } = Astro.props;
+---
+
+<a href={url} class="text-base flex space-x-1 justify-between items-center hover:text-blue-500 dark:hover:text-orange-500">
+    <Icon pack="mdi" name={icon} class="h-5 w-5"/>
+    <span>{platform}</span>
+</a>
